@@ -23,13 +23,9 @@ OBJ_FILES = $(SRC_DIR)/convert.o \
 			$(SRC_DIR)/string_formatter.o \
 			$(SRC_DIR)/utils.o
 
-TEST_EXEC = test_ft_printf
-TEST_SRC = test/test_main.c
-
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
-	@echo "Creating $(NAME)..."
 	$(AR) rc $(NAME) $(OBJ_FILES)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(H_FILES)
@@ -37,30 +33,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(H_FILES)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@echo "Cleaning object files..."
 	rm -rf $(OBJ_DIR)
-	rm -f $(TEST_EXEC)
 
 fclean: clean
-	@echo "Removing $(NAME)..."
 	rm -f $(NAME)
-
-norme:
-	@echo "Running norminette..."
-	norminette $(SRC_FILES) $(H_FILES)
-
-test: $(NAME) $(TEST_SRC)
-	@echo "Compiling test executable..."
-	$(CC) $(CFLAGS) -I include $(TEST_SRC) $(NAME) -o $(TEST_EXEC)
-	@echo "Running tests..."
-	./$(TEST_EXEC)
-
-update:
-	@echo "Updating git repository..."
-	git add .
-	git commit -m "Update project"
-	git push
 
 re: fclean all
 
-.PHONY: all clean fclean re test norme
+.PHONY: all clean fclean re
