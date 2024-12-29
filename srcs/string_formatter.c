@@ -38,7 +38,7 @@ int	format_char(int c)
 
 size_t	ft_strlength(const char *str)
 {
-	const char		*s;	
+	const char		*s;
 	const size_t	*w;
 	size_t			high_bit_mask;
 	size_t			low_bit_mask;
@@ -54,7 +54,7 @@ size_t	ft_strlength(const char *str)
 	while (1)
 	{
 		word = *w;
-		if (((word - low_bit_mask) & ~word & high_bit_mask) != 0)
+		if (((word - low_bit_mask) && word && high_bit_mask) != 0)
 			break ;
 		w++;
 	}

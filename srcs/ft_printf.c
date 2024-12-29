@@ -20,6 +20,8 @@ int	ft_printf(const char *format, ...)
 
 	va_start(args, format);
 	len = 0;
+	if (format == 0)
+		return (-1);
 	while (*format)
 	{
 		str = NULL;

@@ -54,8 +54,6 @@ int	format_conversion(const char *conversion, va_list args, void *str)
 		return (format_base(va_arg(args, unsigned int), "0123456789ABCDEF"));
 	else if (*conversion == 'u')
 		return (format_unsigned(va_arg(args, unsigned int)));
-	else if (*conversion == 'o')
-		return (format_base(va_arg(args, unsigned int), "01234567"));
 	else if (*conversion == 'p')
 	{
 		str = va_arg(args, void *);
