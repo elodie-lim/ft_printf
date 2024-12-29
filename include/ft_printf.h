@@ -21,4 +21,15 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+size_t	ft_strlength(const char *str);
+int		format_char(int c);
+int		format_string(char *str);
+int		format_integer(int n);
+int		format_unsigned(unsigned int value);
+void	ft_putchar(char c);
+void	ft_putstr(char *s);
+int		format_base(unsigned long n, const char *base);
+int		format_conversion(const char *conversion, va_list args, void *str);
+int		ft_printf(const char *format, ...);
+
 #endif
