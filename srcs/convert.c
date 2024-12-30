@@ -20,10 +20,10 @@ int	format_base(unsigned long n, const char *base)
 
 	len = 1;
 	buffer = n;
-	while (buffer >= ft_strlength(base))
+	while (buffer >= ft_strlen(base))
 	{
 		len++;
-		buffer /= ft_strlength(base);
+		buffer /= ft_strlen(base);
 	}
 	str = (char *)malloc(len + 1);
 	if (!str)
@@ -31,11 +31,11 @@ int	format_base(unsigned long n, const char *base)
 	str[len] = '\0';
 	while (len > 0)
 	{
-		str[--len] = base[n % ft_strlength(base)];
-		n /= ft_strlength(base);
+		str[--len] = base[n % ft_strlen(base)];
+		n /= ft_strlen(base);
 	}
-	write(1, str, ft_strlength(str));
-	len = ft_strlength(str);
+	write(1, str, ft_strlen(str));
+	len = ft_strlen(str);
 	free(str);
 	return (len);
 }

@@ -81,7 +81,7 @@ int	format_unsigned(unsigned int value)
 
 	str = ft_utoa(value);
 	ft_putstr(str);
-	len = (int)ft_strlength(str);
+	len = (int)ft_strlen(str);
 	free(str);
 	return (len);
 }
