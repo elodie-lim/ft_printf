@@ -21,7 +21,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-size_t	ft_strlength(const char *str);
+size_t	ft_strlen(const char *str);
 int		format_char(int c);
 int		format_string(char *str);
 int		format_integer(int n);
