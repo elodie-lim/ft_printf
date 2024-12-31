@@ -1,96 +1,89 @@
-// #include "../include/ft_printf.h"
-// #include <stdio.h>
-// int    main(void)
-// {
-//     char    *str1 = "UN";
-//     char    *str2 = "DEUX";
-//     char    *str3 = malloc(1024);
-//     char    *str4 = NULL;
-//     char    *str5 = "";
-//     unsigned int        nb1 = 123456;
-//     unsigned int        nb2 = UINT_MAX;
-//     int        nb3 = 654321;
-//     int        nb4 = INT_MIN;
-//     int        retval1;
-//     int        retval2;
-//     int        retval1b;
-//     int        retval2b;
-//     int        retval3;
-//     int        retval4;
-//     int        retval5;
-//     int        retval6;
-//     int        retval7;
-//     int        retval8;
-//     int        retval9;
-//     int        retval10;
-//     int        retval11;
-//     int        retval12;
-//     int        retval13;
-//     int        retval14;
-//     int        retval15;
-//     int        retval16;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elodlim <elodlim@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/31 06:58:47 by elodlim           #+#    #+#             */
+/*   Updated: 2024/12/31 07:42:43 by elodlim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-//     printf("##########    s    ##########\n");
-//     retval1 = ft_printf("ft_ | s1 : %s, s2 : %s", str1, str2);
-//     retval1b = ft_printf(", null : %s, vide : %s.\n", str4, str5);
-//     retval2 = printf("man | s1 : %s, s2 : %s", str1, str2);
-//     retval2b = printf(", null : %s, vide : %s.\n", str4, str5);
-//     printf("retval ft_ = %d + %d\n", retval1, retval1b);
-//     printf("retval man = %d + %d\n", retval2, retval2b);
+#include "../include/ft_printf.h"
 
-//     printf("##########    X    ##########\n");
-//     retval3 = ft_printf("ft_ | 123456 : %X, UINT_MAX : %X.\n", nb1, nb2);
-//     retval4 = printf("man | 123456 : %X, UINT_MAX : %X.\n", nb1, nb2);
-//     printf("retval ft_ = %d\n", retval3);
-//     printf("retval man = %d\n", retval4);
+int main(void)
+{
+    int len_ft;
+	int	len_real;
 
-//     printf("##########    x    ##########\n");
-//     retval3 = ft_printf("ft_ | 123456 : %x, UINT_MAX : %x.\n", nb1, nb2);
-//     retval4 = printf("man | 123456 : %x, UINT_MAX : %x.\n", nb1, nb2);
-//     printf("retval ft_ = %d\n", retval3);
-//     printf("retval man = %d\n", retval4);
+    len_ft = ft_printf("String test: %s\n", "lamborghini");
+    len_real = printf("String test: %s\n", "lamborghini");
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
 
-//     printf("##########    p    ##########\n");
-//     retval5 = ft_printf("ft_ | ptr1 : %p, ptr2 : %p, ", str1, str2);
-//     retval6 = ft_printf("ptr3 : %p, NULL : %p.\n", str3, str4);
-//     retval7 = printf("man | ptr1 : %p, ptr2 : %p, ", str1, str2);
-//     retval8 = printf("ptr3 : %p, NULL : %p.\n", str3, str4);
-//     printf("retval ft_ = %d + %d\n", retval5, retval6);
-//     printf("retval man = %d + %d\n", retval7, retval8);
-//     free(str3);
+    len_ft = ft_printf("Character test: %c\n", 'l');
+    len_real = printf("Character test: %c\n", 'l');
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
 
-//     printf("##########    u    ##########\n");
-//     retval9 = ft_printf("ft_ | 123456 : %u, INT_MIN : %u.\n", -2, nb4);
-//     retval10 = printf("man | 123456 : %u, INT_MIN : %u.\n", -2, nb4);
-//     printf("retval ft_ = %d\n", retval9);
-//     printf("retval man = %d\n", retval10);
+    len_ft = ft_printf("Signed integer test: %d\n", -12345);
+    len_real = printf("Signed integer test: %d\n", -12345);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
 
-//     printf("##########    d    ##########\n");
-//     retval9 = ft_printf("ft_ | 123456 : %d, INT_MIN : %d.\n", nb3, nb4);
-//     retval10 = printf("man | 123456 : %d, INT_MIN : %d.\n", nb3, nb4);
-//     printf("retval ft_ = %d\n", retval9);
-//     printf("retval man = %d\n", retval10);
+    len_ft = ft_printf("Unsigned integer test: %u\n", 12345);
+    len_real = printf("Unsigned integer test: %u\n", 12345);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
 
-//     printf("##########    i    ##########\n");
-//     retval11 = ft_printf("ft_ | 654321 : %i, INT_MIN : %i.\n", nb3, nb4);
-//     retval12 = printf("man | 654321 : %i, INT_MIN : %i.\n", nb3, nb4);
-//     printf("retval ft_ = %d\n", retval11);
-//     printf("retval man = %d\n", retval12);
+    len_ft = ft_printf("Hexadecimal (lowercase) test: %x\n", 255);
+    len_real = printf("Hexadecimal (lowercase) test: %x\n", 255);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
 
-//     printf("##########    c    ##########\n");
-//     retval13 = ft_printf("ft_ | trois : %c%c%c%c%c.\n", 'T', 'r', 'o', 'i', 's');
-//     retval14 = printf("man | trois : %c%c%c%c%c.\n", 'T', 'r', 'o', 'i', 's');
-//     printf("retval ft_ = %d\n", retval13);
-//     printf("retval man = %d\n", retval14);
+    len_ft = ft_printf("Hexadecimal (uppercase) test: %X\n", 255);
+    len_real = printf("Hexadecimal (uppercase) test: %X\n", 255);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
 
-//     printf("##########    percent    ##########\n");
-//     retval15 = ft_printf("ft_ | percent : %%.\n");
-//     retval16 = printf("man | percent : %%.\n");
-//     printf("retval ft_ = %d\n", retval13);
-//     printf("retval man = %d\n", retval14);
+    len_ft = ft_printf("Pointer test: %p\n", (void*)0x7ffdf7a3b000);
+    len_real = printf("Pointer test: %p\n", (void*)0x7ffdf7a3b000);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
 
-//     // printf("##########    printf(0)    ##########\n");
-//     // ft_printf("%d\n", ft_printf(0));
-//     // printf("%d\n", printf(0));
-// }
+    len_ft = ft_printf("NULL pointer test: %p\n", NULL);
+    len_real = printf("NULL pointer test: %p\n", NULL);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
 
+    len_ft = ft_printf("Percentage symbol test: %%\n");
+    len_real = printf("Percentage symbol test: %%\n");
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
+
+    len_ft = ft_printf("Zero in signed integer test: %d\n", 0);
+    len_real = printf("Zero in signed integer test: %d\n", 0);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
+
+    len_ft = ft_printf("Zero in unsigned integer test: %u\n", 0);
+    len_real = printf("Zero in unsigned integer test: %u\n", 0);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
+
+    len_ft = ft_printf("INT_MAX test: %d\n", INT_MAX);
+    len_real = printf("INT_MAX test: %d\n", INT_MAX);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
+
+    len_ft = ft_printf("INT_MIN test: %d\n", INT_MIN);
+    len_real = printf("INT_MIN test: %d\n", INT_MIN);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
+
+    len_ft = ft_printf("Large number in hexadecimal test: %x\n", 123456789);
+    len_real = printf("Large number in hexadecimal test: %x\n", 123456789);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
+
+    len_ft = ft_printf("Multiple types test: %s, %d, %u, %x, %p\n", "lamborghini", 42, 42, 255, (void*)0x7ffdf7a3b000);
+    len_real = printf("Multiple types test: %s, %d, %u, %x, %p\n", "lamborghini", 42, 42, 255, (void*)0x7ffdf7a3b000);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
+
+    len_ft = ft_printf("String length test: %d\n", 100);
+    len_real = printf("String length test: %d\n", 100);
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
+
+    len_ft = ft_printf("Empty string test: %s\n", "");
+    len_real = printf("Empty string test: %s\n", "");
+    printf("ft_printf returned: %d, printf returned: %d\n", len_ft, len_real);
+
+    return (0);
+}

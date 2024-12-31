@@ -9,9 +9,13 @@ SRC_DIR = srcs
 BUILD_DIR = build
 HEADER = include/ft_printf.h
 
+TEST_SRC = test/main.c
+TEST_EXEC = test_ft_printf
+
 SRCS := $(shell find $(SRC_DIR) -name '*$(FILE_EXTENSION)')
 
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
+
 
 all: $(NAME)
 
@@ -38,3 +42,8 @@ norme:
 	@echo "Running norminette..."
 	norminette $(SRCS) $(HEADER)
 
+test: $(NAME) $(TEST_SRC)
+	@echo "Compiling test executable..."
+	$(CC) $(CFLAGS) -I include $(TEST_SRC) $(NAME) -o $(TEST_EXEC)
+	@echo "Running tests..."
+	./$(TEST_EXEC)
