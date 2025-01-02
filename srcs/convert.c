@@ -62,6 +62,8 @@ int	format_conversion(const char *conversion, va_list args, void *str)
 		return (write(1, "0x", 2) + format_base((unsigned long)str,
 				"0123456789abcdef"));
 	}
+	else if (*conversion == 'o')
+		return (format_base(va_arg(args, unsigned int), "01234567"));
 	else if (*conversion == '%')
 		return (format_char('%'));
 	return (0);
