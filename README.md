@@ -16,6 +16,7 @@ The `ft_printf` function handles the following conversions:
 - **%d**: Prints a signed decimal (base 10) number.
 - **%i**: Prints a signed integer in base 10.
 - **%u**: Prints an unsigned decimal (base 10) number.
+- **%o**: Prints an unsigned number in octal (base 8) format.
 - **%x**: Prints a number in hexadecimal (base 16) lowercase format.
 - **%X**: Prints a number in hexadecimal (base 16) uppercase format.
 - **%%**: Prints a percent sign.
