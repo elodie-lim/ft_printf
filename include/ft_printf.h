@@ -18,8 +18,8 @@
 # include <limits.h>
 # include <stddef.h>
 # include <stdint.h>
-# include <stdlib.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 size_t	ft_strlen(const char *str);
 int		format_char(int c);

@@ -25,21 +25,21 @@ static int	ft_nbrlen(int n)
 	return (1 + ft_nbrlen(n / 10));
 }
 
-static void	ft_putnbr(int nb)
+static void	ft_putnbr(int n)
 {
-	if (nb == -2147483648)
+	if (n == -2147483648)
 		write(1, "-2147483648", 11);
-	else if (nb >= 0 && nb < 10)
-		ft_putchar(nb + '0');
-	else if (nb < 0)
+	else if (n >= 0 && n < 10)
+		ft_putchar(n + '0');
+	else if (n < 0)
 	{
 		ft_putchar('-');
-		ft_putnbr(-nb);
+		ft_putnbr(-n);
 	}
 	else
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
 	}
 }
 
