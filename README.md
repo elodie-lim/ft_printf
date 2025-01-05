@@ -1,6 +1,6 @@
 # ft_printf - Custom C Printf Implementation
 
-**ft_printf** is a custom implementation of the standard `printf` function in C, developed as part of the 42 curriculum. This project explores variadic functions and advanced formatting logic, offering an invaluable opportunity to refine coding and debugging skills. Once complete, **ft_printf** becomes a reusable library for future projects.
+**ft_printf** is a custom implementation of the standard `printf` function in C, developed as part of the 42 curriculum. This project explores variadic functions. Once complete, **ft_printf** becomes a reusable library for future projects.
 
 This repository contains my implementation of `ft_printf`, built with modular, clean, and extensible code to mimic the behavior of the original `printf`.
 
